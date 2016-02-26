@@ -15,6 +15,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 curl -O $ANDROID_SDK
 tar -xzvf $ANDROID_SDK_FILENAME
 sudo chown -R vagrant android-sdk-linux/
+sudo chown -R vagrant android-sdk-linux/temp
 
 echo "ANDROID_HOME=~/android-sdk-linux" >> /home/vagrant/.bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" >> /home/vagrant/.bashrc
@@ -33,7 +34,7 @@ sudo apt-get autoremove
 
 expect -c '
 set timeout -1   ;
-spawn /home/vagrant/android-sdk-linux/tools/android update sdk -u --all --filter platform-tool,android-22,android-23,build-tools-22.0.1
+spawn /home/vagrant/android-sdk-linux/tools/android update sdk --no-ui -u --all --filter platform-tool,android-22,android-23,build-tools-22.0.1,extra
 expect { 
     "Do you accept the license" { exp_send "y\r" ; exp_continue }
     eof
