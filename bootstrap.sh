@@ -46,4 +46,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 
+# install Heroku CLI
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
 
