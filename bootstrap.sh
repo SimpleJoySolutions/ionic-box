@@ -15,6 +15,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 curl -O $ANDROID_SDK
 tar -xzvf $ANDROID_SDK_FILENAME
 sudo chown -R vagrant android-sdk-linux/
+sudo mkdir android-sdk-linux/temp
 sudo chown -R vagrant android-sdk-linux/temp
 
 echo "ANDROID_HOME=~/android-sdk-linux" >> /home/vagrant/.bashrc
