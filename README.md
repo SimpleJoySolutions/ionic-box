@@ -54,4 +54,7 @@ If that does not work, or shows `????? permissions`, then run:
 sudo /home/vagrant/android-sdk-linux/platform-tools/adb kill-server
 sudo /home/vagrant/android-sdk-linux/platform-tools/adb start-server
 ```
-
+### Update Android SDK
+```bash
+android update sdk --no-ui --filter platform-tool,android-22,android-23,build-tools-22.0.1,extra
+```
