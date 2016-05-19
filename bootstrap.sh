@@ -22,7 +22,7 @@ echo "ANDROID_HOME=~/android-sdk-linux" >> /home/vagrant/.bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" >> /home/vagrant/.bashrc
 echo "PATH=\$PATH:~/android-sdk-linux/tools:~/android-sdk-linux/platform-tools" >> /home/vagrant/.bashrc
 
-sudo npm install -g cordova ionic gulp bower
+sudo npm install -g cordova ionic gulp bower nodemon
 # add gradle 2.2.1?
 
 sudo chown -R vagrant /usr/local/lib/node_modules
@@ -41,5 +41,13 @@ expect {
     eof
 }
 '
+# install mongodb
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
 
-#sudo gem install sass
+# install Heroku CLI
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+
